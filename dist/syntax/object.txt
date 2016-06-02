@@ -1,0 +1,44 @@
+Chart.defaults.scale = {
+    display: true,
+    position: "left",
+
+    // grid line settings
+    gridLines: {
+        display: true,
+        color: "rgba(0, 0, 0, 0.1)",
+        lineWidth: 1,
+        drawBorder: true,
+        drawOnChartArea: true,
+        drawTicks: true,
+        tickMarkLength: 10,
+        zeroLineWidth: 1,
+        zeroLineColor: "rgba(0,0,0,0.25)",
+        offsetGridLines: false
+    },
+
+    // scale label
+    scaleLabel: {
+        // actual label
+        labelString: '',
+
+        // display property
+        display: false
+    },
+
+    // label settings
+    ticks: {
+        beginAtZero: false,
+        minRotation: 0,
+        maxRotation: 50,
+        mirror: false,
+        padding: 10,
+        reverse: false,
+        display: true,
+        autoSkip: true,
+        autoSkipPadding: 0,
+        labelOffset: 0,
+        callback: function(value) {
+            return '' + value;
+        }
+    }
+};

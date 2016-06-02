@@ -1,0 +1,208 @@
+/*!
+ * Syntaxy syntax highlighter
+ */
+
+// flashing aimation
+@keyframes stx-flash
+{
+    0% { background-color: $flashColor; }
+    50% { background-color: darken( $flashColor, 20% ); }
+    100% { background-color: $flashColor; }
+}
+
+// inline containers
+.stx-wrap-inline
+{
+    display: inline-block;
+    margin: 0;
+    padding: $padSize;;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $fontSize;
+    line-height: $fontSize;
+    color: $fontColor;
+    background-color: $bgColor;
+    border-radius: $borderRadius;
+    box-sizing: border-box;
+}
+
+// container styles
+.stx-wrap
+{
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: $padSize;
+    background-color: $bgColor;
+    color: $fontColor;
+    border-radius: $borderRadius;
+    box-sizing: border-box;
+
+    // reset children
+    & *,
+    & *:before,
+    & *:after
+    {
+        background-color: transparent;
+        box-sizing: border-box;
+        font-family: $fontFamily;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $fontSize;
+        line-height: normal;
+        list-style: none;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    // header bar
+    .stx-header
+    {
+        margin: 0 0 $padSize 0;
+        padding: 6px 8px 4px 8px;
+        border-radius: 3px;
+        background-color: lighten( $bgColor, 8% );
+
+        button
+        {
+            display: inline-block;
+            cursor: pointer;
+            font-size: $fontSize;
+            line-height: $fontSize;
+        }
+    }
+
+    // scroll area container
+    .stx-scroller
+    {
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+
+        // show scrollbar on hover if needed
+        &:hover { overflow: auto; }
+
+        // hide inner containers line numbers
+        &.stx-nonums
+        {
+            .stx-line-wrap:after { display: none; }
+            .stx-line-code
+            {
+                margin-left: 0;
+                padding-left: 10px;
+                border-left: none;
+            }
+        }
+    }
+
+    // individual lines
+    .stx-line-wrap
+    {
+        display: block;
+        position: relative;
+        overflow: visible;
+        border-radius: 3px;
+        margin: 0;
+        padding: 0;
+
+        // right column syntax lines
+        .stx-line-code
+        {
+            margin-left: 60px;
+            padding: $lineSpace 0 $lineSpace 10px;
+            padding-right: 0;
+            border-left: 1px solid lighten( $bgColor, 5% );
+            color: $textColor;
+        }
+
+        // left column line numbers
+        &:after
+        {
+            display: inline-block;
+            position: absolute;
+            margin: 0;
+            padding: $lineSpace 0;
+            left: 0;
+            top: 0;
+            width: 50px;
+            text-align: right;
+            cursor: default;
+            user-select: none;
+            color: darken( $textColor, 20% );
+            content: attr(data-line);
+        }
+    }
+}
+
+// darker lines
+.stx-darker { background-color: darken( $bgColor, 1.5% ); }
+.stx-darker:hover { background-color: lighten( $bgColor, 6% ); }
+.stx-darker:active { background-color: lighten( $bgColor, 15% ) }
+
+// lighter lines
+.stx-lighter { background-color: lighten( $bgColor, 1.5% ); }
+.stx-lighter:hover { background-color: lighten( $bgColor, 6% ); }
+.stx-lighter:active { background-color: lighten( $bgColor, 15% ) }
+
+// line flashing
+.stx-flash { background-color: $flashColor; animation: stx-flash $flashSpeed $flashTimes; }
+.stx-flash:hover { background-color: lighten( $flashColor, 30% ); }
+
+// common helpers
+.stx-bold { font-weight: bold; }
+.stx-italic { font-style: italic; }
+.stx-left { float: left; }
+.stx-right { float: right; }
+
+// float clearing
+.stx-clear:after
+{
+    display: block;
+    visibility: hidden;
+    clear: both;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    border: none;
+    content: ".";
+}
+
+// word wrapping
+.stx-nowrap
+{
+    white-space: pre;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+.stx-wordwrap
+{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+// theme colors
+.stx-text { color: $textColor; }
+.stx-doctype { color: $doctypeColor; }
+.stx-numeric { color: $numericColor; }
+.stx-operator { color: $operatorColor; }
+.stx-keyword { color: $keywordColor; }
+.stx-function { color: $functionColor; }
+.stx-global { color: $globalColor; }
+.stx-class { color: $classColor; }
+.stx-key { color: $keyColor; }
+.stx-value { color: $valueColor; }
+.stx-import { color: $importColor; }
+.stx-important { color: $importantColor; }
+.stx-tag { color: $tagColor; }
+.stx-media { color: $mediaColor; }
+.stx-table { color: $tableColor; }
+.stx-form { color: $formColor; }
+.stx-embed { color: $embedColor; }
+.stx-hook { color: $hookColor; }
+.stx-comment, .stx-comment * { color: $commentColor; font-style: italic; }
+.stx-string, .stx-string * { color: $stringColor; }

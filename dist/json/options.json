@@ -1,0 +1,102 @@
+{
+    "head" : {
+        "name"        : "JS Option",
+        "attribute"   : "Attribute",
+        "type"        : "Type",
+        "default"     : "Default",
+        "description" : "Description"
+    },
+    "list" : [
+        {
+            "name"        : "tagOpen",
+            "attribute"   : "n/a",
+            "type"        : "String",
+            "default"     : "«",
+            "description" : "Special wrapping tag opening delimiter used by Syntaxy before rendering to final HTML markup."
+        },
+        {
+            "name"        : "tagSplit",
+            "attribute"   : "n/a",
+            "type"        : "String",
+            "default"     : "≈",
+            "description" : "Special wrapping tag split delimiter used by Syntaxy before rendering to final HTML markup."
+        },
+        {
+            "name"        : "tagClose",
+            "attribute"   : "n/a",
+            "type"        : "String",
+            "default"     : "»",
+            "description" : "Special wrapping tag closing delimiter used by Syntaxy before rendering to final HTML markup."
+        },
+        {
+            "name"        : "tagName",
+            "attribute"   : "n/a",
+            "type"        : "String",
+            "default"     : "span",
+            "description" : "The name/type of HTML markup tags used for individual highlighted words during final render."
+        },
+        {
+            "name"        : "classPrefix",
+            "attribute"   : "n/a",
+            "type"        : "String",
+            "default"     : "stx-",
+            "description" : "CSS class name prefix for Syntaxy related theme, colors and container markup code."
+        },
+        {
+            "name"        : "codeTitle",
+            "attribute"   : "data-title",
+            "type"        : "String",
+            "default"     : "Source code",
+            "description" : "Title string to go on the top header bar of rendered Syntaxy code containers."
+        },
+        {
+            "name"        : "codeType",
+            "attribute"   : "data-type",
+            "type"        : "String",
+            "default"     : "blank",
+            "description" : "This refers to the name of the initial RegExp filter to be used for highlighting specific code types."
+        },
+        {
+            "name"        : "minHeight",
+            "attribute"   : "data-min-height",
+            "type"        : "String",
+            "default"     : "100px",
+            "description" : "A CSS size value to be used as the minimum height allowed for Syntaxy code containers."
+        },
+        {
+            "name"        : "maxHeight",
+            "attribute"   : "data-max-height",
+            "type"        : "String",
+            "default"     : "600px",
+            "description" : "A CSS size value to be used as the maximum height allowed for Syntaxy code containers."
+        },
+        {
+            "name"        : "isInline",
+            "attribute"   : "data-inline",
+            "type"        : "Mixed",
+            "default"     : "false",
+            "description" : "A boolean-like value to specify if the code container is an in-line element (span, etc), or block-type element."
+        },
+        {
+            "name"        : "wordWrap",
+            "attribute"   : "data-wrap",
+            "type"        : "Mixed",
+            "default"     : "false",
+            "description" : "A boolean-like value to specify if long code lines should be wrapped or remain on a single line (h-scroll)."
+        },
+        {
+            "name"        : "startLine",
+            "attribute"   : "data-start",
+            "type"        : "Int",
+            "default"     : "1",
+            "description" : "A number that specifies what line number to start counting up from."
+        },
+        {
+            "name"        : "debugLines",
+            "attribute"   : "data-debug",
+            "type"        : "String",
+            "default"     : "blank",
+            "description" : "A comma-separated list of line numbers to flash/highlight, used to bring attention to specific lines."
+        }
+    ]
+}

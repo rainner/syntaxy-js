@@ -1,0 +1,109 @@
+// flashing aimation
+@keyframes stx-flash
+{
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+// container styles
+.stx-wrap
+{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: $padSize;
+    background-color: $bgColor;
+    color: $fontColor;
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+
+    // reset children
+    & *,
+    & *:before,
+    & *:after
+    {
+        background-color: transparent;
+        box-sizing: border-box;
+        font-family: $fontFamily;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $fontSize;
+        line-height: normal;
+        list-style: none;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    // individual lines
+    .stx-line-wrap
+    {
+        display: block;
+        position: relative;
+        overflow: visible;
+        border-radius: 3px;
+        margin: 0;
+        padding: 0;
+
+        // right column syntax lines
+        .stx-line-code
+        {
+            margin-left: 60px;
+            padding: $lineSpace 0 $lineSpace 10px;
+            padding-right: 0;
+            border-left: 1px dotted lighten( $bgColor, 10% );
+            color: $textColor;
+        }
+
+        // left column line numbers
+        &:after
+        {
+            display: inline-block;
+            position: absolute;
+            margin: 0;
+            padding: $lineSpace 0;
+            left: 0;
+            top: 0;
+            width: 50px;
+            text-align: right;
+            color: darken( $textColor, 20% );
+            content: attr(data-line);
+        }
+    }
+
+    // darker lines
+    .stx-darker { background-color: darken( $bgColor, 1.5% ); }
+    .stx-darker:hover { background-color: lighten( $bgColor, 6% ); }
+    .stx-darker:active { background-color: lighten( $bgColor, 15% ) }
+
+    // lighter lines
+    .stx-lighter { background-color: lighten( $bgColor, 1.5% ); }
+    .stx-lighter:hover { background-color: lighten( $bgColor, 6% ); }
+    .stx-lighter:active { background-color: lighten( $bgColor, 15% ) }
+
+    // line flashing
+    .stx-flash { background-color: $flashColor; animation: stx-flash $flashSpeed $flashTimes; }
+    .stx-flash:hover { background-color: lighten( $flashColor, 30% ); }
+
+    // common helpers
+    .stx-bold { font-weight: bold; }
+    .stx-italic { font-style: italic; }
+    .stx-left { float: left; }
+    .stx-right { float: right; }
+
+    // float clearing
+    .stx-clear:after
+    {
+        display: block;
+        visibility: hidden;
+        clear: both;
+        margin: 0;
+        padding: 0;
+        height: 0;
+        border: none;
+        content: ".";
+    }
+}

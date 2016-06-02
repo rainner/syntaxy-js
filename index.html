@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Syntaxy Example</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./dist/css/syntaxy.dark.min.css" id="syntaxy-theme-hook" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+
+</head>
+<body>
+
+    <!-- begin section -->
+    <header class="header-wrap">
+        <div class="container text-center">
+
+            <!-- intro headings -->
+            <h1 class="push-down">Syntaxy.js</h1>
+            <h3 class="push-down">
+                Syntaxy is a small and flexible syntax highlighter for the web.
+                It uses one common theme file for all syntax languages to make it easier to customize the appearance to fit your theme.
+                It has no dependencies out of the box, but can be used as a jQuery plugin, if you already have it loaded on your site.
+            </h3>
+
+            <!-- action buttons group -->
+            <div class="action-btns push-down shadow-small btn-group" role="group" aria-label="Syntaxy Examples, Themes and Downloads">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="glyphicon glyphicon-align-left"></i> Examples <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="examples" href="#" data-type="markup" data-syntax="html">HTML5+</a></li>
+                        <li><a class="examples" href="#" data-type="default" data-syntax="javascript">Javascript</a></li>
+                        <li><a class="examples" href="#" data-type="object" data-syntax="object">JS Object</a></li>
+                        <li><a class="examples" href="#" data-type="object" data-syntax="json">JSON</a></li>
+                        <li><a class="examples" href="#" data-type="default" data-syntax="php">PHP</a></li>
+                        <li><a class="examples" href="#" data-type="default" data-syntax="ruby">Ruby</a></li>
+                        <li><a class="examples" href="#" data-type="default" data-syntax="clike">C-Like</a></li>
+                        <li><a class="examples" href="#" data-type="default" data-syntax="python">Python</a></li>
+                        <li><a class="examples" href="#" data-type="shell" data-syntax="bash">Shell/Bash</a></li>
+                        <li><a class="examples" href="#" data-type="style" data-syntax="sass">CSS/SASS</a></li>
+                        <li><a class="examples" href="#" data-type="markup" data-syntax="xml">XML/RSS/SVG</a></li>
+                        <li><a class="examples" href="#" data-type="sql" data-syntax="mysql">MySQL</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="glyphicon glyphicon-tint"></i> Themes <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="themes" href="#" data-theme="dark">Dark</a></li>
+                        <li><a class="themes" href="#" data-theme="light">Light</a></li>
+                        <li><a class="themes" href="#" data-theme="purple">Purple</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-lg btn-primary" href="https://github.com/rainner/syntaxy-js">
+                    <i class="glyphicon glyphicon-hand-right"></i> View on Github
+                </a>
+            </div>
+
+        </div>
+
+         <!-- main code preview -->
+        <div class="container">
+            <pre id="syntaxy-code"
+                class="bg-dark shadow-big"
+                data-title="Syntaxy examples"
+                data-min-height="400px"
+                data-max-height="400px"
+                style="min-height: 400px;">
+            </pre>
+        </div>
+
+    </header>
+
+    <!-- begin section -->
+    <section class="features-wrap bg-light border-top">
+        <div class="container text-center">
+            <div class="row text-center">
+                <div class="col col-md-3">
+                    <i class="glyphicon glyphicon-zoom-in"></i>
+                    <h3 class="push-down text-center">Small</h3>
+                    <p>Syntaxy is very small and doesn't require extensions or additional syntax files for specific languages and comes in at around 12k minified.</p>
+                </div>
+                <div class="col col-md-3">
+                    <i class="glyphicon glyphicon-dashboard"></i>
+                    <h3 class="push-down text-center">Fast</h3>
+                    <p>Syntaxy uses a set of carefully crafted regular expression filters to quickly go through and highlight the code without DOM manipulations.</p>
+                </div>
+                <div class="col col-md-3">
+                    <i class="glyphicon glyphicon-align-left"></i>
+                    <h3 class="push-down text-center">Pretty</h3>
+                    <p>Syntaxy's main stylesheet file is written in Sass and uses variable files to control the main appearance and highlighted syntax colors.</p>
+                </div>
+                <div class="col col-md-3">
+                    <i class="glyphicon glyphicon-cog"></i>
+                    <h3 class="push-down text-center">Flexible</h3>
+                    <p>Syntaxy does not rely on anything else to work, but allows you to add your own regex filters or override the included filters to suit your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- begin section -->
+    <section class="usage-wrap bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-6">
+                    <h3 class="push-down text-center">How to Use Syntaxy</h3>
+                    <p>
+                        Using Syntaxy is really simple. Once you have downloaded the project files
+                        from the <a href="https://github.com/rainner/syntaxy-js">Syntaxy github repository</a>, either manually or using a package manager,
+                        start by including the Syntaxy theme CSS file to handle the appearance, and the
+                        Syntaxy Javascript file to handle the functionality. These are located in the /dist folder.
+                    </p>
+                    <p>
+                        You can initialize Syntaxy by creating a new instance of it: <span class="bg-inline text-code">var syntaxy = new Syntaxy( target, options );</span>,
+                        or if you have jQuery already loaded, use it as a plugin: <span class="bg-inline text-code">$( '.targets' ).syntaxy( options );</span>
+                    </p>
+                    <p>
+                        The options tell Syntaxy how to highlight the code for the selected target element,
+                        among other things, and can be passed to the Syntaxy constructor, or be read from the target element's data attributes,
+                        or a combination of both.
+                    </p>
+                </div>
+                <div class="col col-md-6">
+                    <pre class="syntaxy" data-title="Syntaxy HTML setup example" data-type="markup">
+                        &lt;!DOCTYPE html>
+                        &lt;html>
+                        &lt;head>
+                            &lt;title>Example Page&lt;/title>
+                            &lt;link rel="stylesheet" href="/path/to/syntaxy.theme.min.css" />
+                        &lt;/head>
+                        &lt;body>
+                            &lt;pre id="syntaxy" data-type="markup">
+                                code to highlight here...
+                            &lt;/pre>
+                            &lt;script src="/path/to/syntaxy.min.js">&lt;/script>
+                            &lt;script type="text/javascript">
+                                var target  = document.getElementById( 'syntaxy' );
+                                var syntaxy = new Syntaxy( target, {} );
+                                syntaxy.render();
+                            &lt;/script>
+                        &lt;/body>
+                        &lt;/html>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- begin section -->
+    <section class="options-wrap bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-6">
+                    <h3 class="push-down text-center">Syntaxy Options</h3>
+                    <p>
+                        There are different ways to pass <a href="#" data-scroll="#options-row">options</a>
+                        to Syntaxy, one way is to pass it to the Syntaxy constructor during instantiation,
+                        or using the <span class="bg-inline text-code">setOptions( options );</span>
+                        method.
+                    </p>
+                </div>
+                <div class="col col-md-6">
+                    <pre class="syntaxy" data-type="default" data-title="Passing options example" data-min-height="50px">
+                        // pass options to constructor
+                        var syntaxy = new Syntaxy( target, { codeType: 'default' } );
+                        // or, use the setOptions method
+                        syntaxy.setOptions( { codeType: 'default' } );
+                    </pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        Another way is to pass options to Syntaxy is by using data attributes
+                        on the target element that holds the code to be highlighted.
+                        Note that <i>only some options</i> can be passed using data attributes,
+                        see the options table below for more info.
+                    </p>
+                </div>
+                <div class="col col-md-6">
+                    <pre class="syntaxy" data-type="markup" data-title="Tag attribute options example" data-min-height="50px">
+                        &lt;pre class="syntaxy" data-type="default" ...>
+                            code to highlight here...
+                        &lt;/pre>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- begin section -->
+    <section class="extend-wrap bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-6">
+                    <h3 class="push-down text-center">Extending Syntaxy Filters</h3>
+                    <p>
+                        You can create your own Regular Expression filters (functions) that extend the built-in
+                        Syntaxy <a href="#" data-scroll="#filters-row">filters</a>.
+                        Start by setting the <span class="bg-inline text-code">data-type</span>
+                        attribute of your container to the name of your custom filter:
+                    </p>
+                </div>
+                <div class="col col-md-6">
+                    <pre class="syntaxy" data-type="markup" data-title="Using a custom filter example" data-min-height="50px">
+                        &lt;pre class="syntaxy" data-type="myfilter">
+                            // code to highlight using myfilter...
+                            foo( bar );
+                        &lt;/pre>
+                    </pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        The <span class="bg-inline text-code">addFilter( name, filter )</span>
+                        method takes the name of your custom filter and a function that is executed
+                        in the scope of the Syntaxy class, giving you access to other methods to use.
+                        This function takes the entire code from the target container as a string and
+                        expects you to return it back out after applying your changes.
+                    </p>
+                    <p>
+                        The <span class="bg-inline text-code">wrapClass( class, code, strip, multiline )</span> method is used
+                        to wrap something, like the resulting match of a regular expression in a class that
+                        corresponds with the color (CSS theme) to be applied (highlight).
+                        This method takes the name of the CSS class (without prefix, see options),
+                        the content to be wrapped and two other boolean options, and
+                        returns the content wrapped in special tags with the defined class name.
+                    </p>
+                    <p>
+                        You can use a filter that has been added to, or comes with Syntaxy by using the
+                        <span class="bg-inline text-code">applyFilter( name, code )</span> method.
+                        This method takes the name of the filter to be used, the code string,
+                        and passes it through the filter's callback function, as described above.
+                    </p>
+                </div>
+                <div class="col col-md-6">
+                    <pre class="syntaxy" data-type="default" data-title="Adding a custom filter example">
+                        var syntaxy = new Syntaxy( target, {} );
+
+                        // adding a custom filter
+                        syntaxy.addFilter( 'myfilter', function( code )
+                        {
+                            // custom code modifications for this filter
+                            code = code.replace( /(foo)/g, this.wrapClass( 'function', '$1' ) );
+                            code = code.replace( /(bar)/g, this.wrapClass( 'keyword', '$1' ) );
+
+                            // apply some filters already added
+                            code = this.applyFilter( 'comments', code );
+                            code = this.applyFilter( 'strings', code );
+
+                            // done
+                            return code;
+                        });
+                        // render final markup (highlight)
+                        syntaxy.render();
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- begin section -->
+    <section class="build-wrap bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-6">
+                    <h3 class="push-down text-center">Building Syntaxy</h3>
+                    <p>
+                        Syntaxy already comes with a few themes compiled and ready to go out of the box,
+                        but you can also build your own themes from the included source files in the /src folder.
+                    </p>
+                    <p>
+                        You will need <a href="https://nodejs.org/en/">Node JS</a> installed and be familiar with using
+                        <a href="http://gulpjs.com/">Gulp tasks</a> to build and minify both the CSS and Javascript code.
+                        Here's a few examples of how to use the included Gulp tasks to build Syntaxy.
+                    </p>
+                    <p>
+                        Build output (JS/CSS) can be found in the /dist folder.
+                    </p>
+                </div>
+                <div class="col col-md-6">
+                    <pre class="syntaxy" data-type="terminal" data-title="Building Syntaxy files example">
+                        // get the dependencies installed
+                        $ npm install
+                        // build and minify just the CSS to /dist
+                        $ gulp build_css
+                        // build and minify just the JS to /dist
+                        $ gulp build_js
+                        // build and minify both JS and CSS to /dist
+                        $ gulp build
+                        // watch both JS and CSS for changes and build both
+                        $ gulp watch
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- begin section -->
+    <section class="limits-wrap bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-6">
+                    <h3 class="push-down text-center">Limitation of Syntaxy</h3>
+                    <ul>
+                        <li>
+                            Syntaxy handles the code to highlight as a string, passing it to filters to be processed.
+                            This is fast, but might cause conflicts between filters, if creating custom ones.
+                            It tries to get around this by first wrapping highlighted code in a special tag prior to
+                            rendering the code to final HTML tags.
+                        </li>
+                        <li>
+                            Syntaxy's simplicity helps it work well in most browsers, but there is no support for IE 8.
+                            It has been tested to work properly on IE 9+ and should work on other browsers as well.
+                        </li>
+                        <li>
+                            You tell me, <a href="https://github.com/rainner/syntaxy-js/issues">submit an issue</a>
+                            to the Github repo if you find a problem and it will get looked at.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col col-md-6">
+                    <h3 class="push-down text-center">Error Handling</h3>
+                    <p>
+                        Syntaxy will try to render the selected code syntax using the filter/s specified,
+                        but in case of an error, it will capture the error and default to showing the raw code as is.
+                    </p>
+                    <p>
+                        You should see an exclamation symbol in the header of a Syntaxy container indicating there has been an error.
+                        When clicked, it should alert the error message for debugging, example:
+                    </p>
+                    <p></p>
+                    <pre class="syntaxy" data-type="foobar" data-min-height="50px" data-title="Invalid filter name example">
+                        // highlight me!
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- begin section -->
+    <section class="tech-wrap bg-light border-bottom">
+        <div class="container">
+            <div class="row" id="options-row">
+                <div class="col col-md-12">
+                    <div class="push-down text-center">
+                        <h3 class="push-down">Syntaxy Options</h3>
+                        <p>Here is a table listing all available options for Syntaxy.</p>
+                    </div>
+                    <div class="bg-dark round">
+                        <table id="options-tb" width="100%" cellspacing="0" cellpadding="0" border="0"></table>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="filters-row">
+                <div class="col col-md-12">
+                    <div class="push-down text-center">
+                        <h3 class="push-down">Syntaxy Filters</h3>
+                        <p>Here is a table listing all available filters that come with Syntaxy.</p>
+                    </div>
+                    <div class="bg-dark round">
+                        <table id="filters-tb" width="100%" cellspacing="0" cellpadding="0" border="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- begin section -->
+    <footer class="footer-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-4">
+                    <p>Author info</p>
+                </div>
+                <div class="col col-md-4">
+                    <p>Repo/version info</p>
+                </div>
+                <div class="col col-md-4">
+                    <p>Share buttons</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="./dist/js/syntaxy.min.js"></script>
+    <script src="./dist/js/js-cookie.js"></script>
+    <script src="./dist/js/scripts.js"></script>
+
+</body>
+</html>

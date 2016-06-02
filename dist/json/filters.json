@@ -1,0 +1,124 @@
+{
+    "head" : {
+        "name"        : "Filter name",
+        "arguments"   : "Arguments",
+        "return"      : "Return",
+        "description" : "Description"
+    },
+    "list" : [
+        {
+            "name"        : "doctypes",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Doctype tags for HTML, XML and PHP syntax."
+        },
+        {
+            "name"        : "constants",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Uppercase, alphanumeric words, or words that start with double underscores."
+        },
+        {
+            "name"        : "classes",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Words that appear capitalized, indicating a ClassName or instance."
+        },
+        {
+            "name"        : "functions",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Alphanumeric words that are followed by function parenthesis ()."
+        },
+        {
+            "name"        : "numbers",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Signed and unsigned numeric values, or hex values that start with 0x."
+        },
+        {
+            "name"        : "operators",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Common syntax operator characters ( !==, >>, etc.)."
+        },
+        {
+            "name"        : "keywords",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Contains a pre-defined list of common keywords found in most languages."
+        },
+        {
+            "name"        : "keys",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Object keys, words followed by colons :."
+        },
+        {
+            "name"        : "tags",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Markup language tags (HTML, XML, SVG, etc.), some tag types (forms, tables, media, etc.) get a different class name."
+        },
+        {
+            "name"        : "comments",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Multi-line comment blocks and single-line comments. Some comment types (--, #) require a space after the comment delimiter."
+        },
+        {
+            "name"        : "strings",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Single-line string blocks, including single quotes, double quotes and backticks."
+        },
+        {
+            "name"        : "markup",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Highlighting of markup type syntax with nested CSS, PHP and Javascript."
+        },
+        {
+            "name"        : "style",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Highlighting of stylesheet syntax (CSS, SASS, LESS)."
+        },
+        {
+            "name"        : "terminal",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Basic highlighting for terminal/command-line type syntax."
+        },
+        {
+            "name"        : "shell",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "highlighting for Shell/Bash script type syntax."
+        },
+        {
+            "name"        : "object",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Highlighting of Object literal type syntax that have key/value pairs, comments, function, numbers and strings."
+        },
+        {
+            "name"        : "json",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Highlighting of Object literal type syntax that have key/value String pairs and comments."
+        },
+        {
+            "name"        : "sql",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Highlighting of SQL type syntax targeting uppercase syntax words, functions and strings."
+        },
+        {
+            "name"        : "default",
+            "arguments"   : "{String} code",
+            "return"      : "{String} code",
+            "description" : "Main highlighting for most common syntax types using a combination of other available filters."
+        }
+    ]
+}

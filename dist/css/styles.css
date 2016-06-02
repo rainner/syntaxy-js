@@ -1,0 +1,208 @@
+/**
+ * Document
+ */
+body {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    background: #222d41 url( '../img/header-bg.jpg' ) center top no-repeat fixed;
+    background-size: cover;
+    color: #ccc;
+}
+
+/**
+ * Common tags
+ */
+pre, code {
+    margin: 4px 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: #aaa;
+}
+hr {
+    border: none;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    line-height: normal;
+}
+
+/**
+ * Font sizing
+ */
+p, li {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/**
+ * Paragraph spacing
+ */
+p, .col li {
+    margin: 0 0 30px 0;
+}
+* > p:last-of-type,
+* > .col li:last-of-type {
+    margin: 0;
+}
+
+/**
+ * Header
+ */
+header {
+    position: relative;
+    z-index: 999;
+    margin: 0;
+    padding: 60px 0 40px 0;
+}
+header h1 {
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: -2px;
+}
+header h3 {
+    letter-spacing: -1px;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+/**
+ * Section padding
+ */
+section, footer {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 20px 0;
+}
+.col {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/**
+ * Inline code text
+ */
+.text-code {
+    font-family: monaco, monospace;
+    font-size: 14px;
+    line-height: 14px;
+    color: #cc9;
+}
+
+/**
+ * Tables
+ */
+table thead,
+table th,
+table tbody,
+table tb,
+table tfoot,
+table tf,
+table tr {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+table > tbody tr {
+    background-color: transparent;
+}
+table > tbody tr:hover {
+    background-color: rgba( 0,0,0,0.1 );
+}
+table td {
+    padding: 8px 12px;
+    border: none;
+}
+table > tbody td {
+    border-top: 1px dotted rgba( 255, 255, 255, 0.1 );
+}
+
+/**
+ * Rounded edges modifiers
+ */
+.round {
+    border-radius: 6px;
+}
+
+/**
+ * Margin modifiers
+ */
+.push-up {
+    margin-top: 30px;
+}
+.push-down {
+    margin-bottom: 30px;
+}
+
+/**
+ * BG color modifiers
+ */
+.bg-light {
+    background-color: #303646;
+}
+.bg-dark {
+    background-color: #292f40;
+}
+.bg-inline {
+    display: inline-block;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 6px 8px;
+}
+
+/**
+ * Tick border modifier
+ */
+.border-top {
+    border-top: 4px solid rgba( 255, 255, 255, 0.05 );
+}
+.border-bottom {
+    border-bottom: 4px solid rgba( 255, 255, 255, 0.05 );
+}
+
+/**
+ * Shadowe modifier
+ */
+.shadow-small {
+    box-shadow: 0 1px 6px rgba( 0, 0, 0, 0.3 );
+}
+.shadow-big {
+    box-shadow: 0 2px 16px rgba( 0, 0, 0, 0.3 );
+}
+
+/**
+ * features section
+ */
+.features-wrap {
+    margin-top: -260px;
+    padding-top: 240px;
+}
+.features-wrap .glyphicon {
+    display: inline-block;
+    margin: 0 0 20px 0;
+    font-size: 100px;
+    line-height: 100px;
+    opacity: 0.4;
+}
+.features-wrap h3 {
+    margin: 0 0 20px 0;
+}
+
+/**
+ * Popovers
+ */
+.popover {
+    font-family: monaco, monospace;
+    font-size: 14px;
+    line-height: 18px;
+    color: #222;
+}
+
+

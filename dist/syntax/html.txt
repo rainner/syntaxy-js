@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Syntaxy Example</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../dist/css/syntaxy.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <style type="text/css">
+    /* nested CSS inside HTML markup */
+    .foo { background-color: rgba(0, 0, 0, 0.5); }
+    </style>
+
+</head>
+<body>
+
+    <!-- PHP error on this line -->
+    <?= $dont_exist ?>
+
+    <section class="example">
+        <div class="container">
+            <!-- media tags -->
+            <video src="foo.ogg">
+                <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English">
+                <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska">
+            </video>
+        </div>
+    </section>
+
+    <section class="example">
+        <div class="container">
+            <!-- form tags -->
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Label</legend>
+                    <input type="text" name="foo" value=""></input>
+                    <textarea name="bar"></textarea>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+
+    <section class="example">
+        <div class="container">
+            <!-- table tags -->
+            <table width="100%" border="0">
+                <thead>
+                    <tr>
+                        <td>Data</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </section>
+
+    <section class="example">
+        <div class="container">
+            <!-- nested PHP inside HTML markup -->
+            <?php
+            $foo new Foo( 'bar' );
+            echo $foo->html( __DIR__  );
+            ?>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="../dist/js/syntaxy.min.js"></script>
+
+    <script type="text/javascript">
+    // nested Javascript inside HTML markup
+    $( 'a.examples' ).on( 'click', function( e )
+    {
+        e && e.preventDefault();
+
+        var button = $( this )
+            type   = button.data( 'type' )   || '',
+            syntax = button.data( 'syntax' ) || '';
+
+        getSyntax( syntax, type );
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+/**
+ * Module dependencies.
+ */
+var Emitter = require('events').EventEmitter;
+var parser = require('socket.io-parser');
+var url = require('url');
+var debug = require('debug')('socket.io:socket');
+var hasBin = require('has-binary');
+
+/**
+ * Emits to this client.
+ *
+ * @return {Socket} self
+ * @api public
+ */
+Socket.prototype.emit = function(ev){
+  if (~exports.events.indexOf(ev)) {
+    emit.apply(this, arguments);
+  } else {
+    var args = Array.prototype.slice.call(arguments);
+    var packet = {};
+    packet.type = hasBin(args) ? parser.BINARY_EVENT : parser.EVENT;
+    packet.data = args;
+    var flags = this.flags || {};
+
+    // access last argument to see if it's an ACK callback
+    if ('function' == typeof args[args.length - 1]) {
+      if (this._rooms || flags.broadcast) {
+        throw new Error('Callbacks are not supported when broadcasting');
+      }
+
+      debug('emitting packet with ack id %d', this.nsp.ids);
+      this.acks[this.nsp.ids] = args.pop();
+      packet.id = this.nsp.ids++;
+    }
+
+    if (this._rooms || flags.broadcast) {
+      this.adapter.broadcast(packet, {
+        except: [this.id],
+        rooms: this._rooms,
+        flags: flags
+      });
+    } else {
+      // dispatch packet
+      this.packet(packet, {
+        volatile: flags.volatile,
+        compress: flags.compress
+      });
+    }
+
+    // reset flags
+    delete this._rooms;
+    delete this.flags;
+  }
+  return this;
+};

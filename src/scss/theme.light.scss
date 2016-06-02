@@ -1,0 +1,82 @@
+/**
+ * Syntaxy Light Theme.
+ */
+
+// container styles
+$bgColor: #f0f0f0;
+$padSize: 5px;
+$borderRadius: 5px;
+
+// base font styles
+$fontColor: #404040;
+$fontFamily: "monaco", "Courier New", monospace;
+$fontSize: 13px;
+$lineSpace: 2px;
+
+// line flashing options
+$flashColor: rgba( 255, 0, 0, 0.18 );
+$flashSpeed: 2s;
+$flashTimes: infinite;
+
+// common text color
+$textColor: #40494f;
+
+// document declaration tags (php|xml|doctype)
+$doctypeColor: #994444;
+
+// string blocks
+$stringColor: #887711;
+
+// numeric values
+$numericColor: #884422;
+
+// code operators and other symbols
+$operatorColor: #50596f;
+
+// reserved keywords
+$keywordColor: #008844;
+
+// named functions
+$functionColor: #5566bb;
+
+// global keywords and variables
+$globalColor: #8855cc;
+
+// full camelcase class names
+$classColor: #5280a0;
+
+// object key color
+$keyColor: #61819a;
+
+// object value color
+$valueColor: #8f6581;
+
+// import keywords and statements
+$importColor: #995066;
+
+// important and warnings
+$importantColor: #880000;
+
+// common html and xml tags
+$tagColor: #21418a;
+
+// media related html tags
+$mediaColor: #806090;
+
+// table related html tags
+$tableColor: #446f25;
+
+// form related html tags
+$formColor: #667744;
+
+// embed related html tags
+$embedColor: #6060b0;
+
+// hook/link/source related html tags
+$hookColor: #855140;
+
+// comment blocks
+$commentColor: #a0a0a0;
+
+// import syntaxy main
+@import 'syntaxy.scss';
