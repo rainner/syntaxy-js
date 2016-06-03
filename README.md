@@ -19,7 +19,7 @@ Start by getting the Syntaxy CSS an JS files added to the page:
 ...
 <pre id="codebox" data-type="default">
     // some code here to highlight.
-    // default is the name of tyhe filter that will be used to highlight.
+    // default is the name of the filter that will be used to highlight.
     // see more info on using filters below.
 </pre>
 ...
