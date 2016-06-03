@@ -18,9 +18,11 @@ $(function()
     // change syntaxy theme file
     function changeThemeFile( theme )
     {
-        theme = theme || 'dark';
-        document.getElementById( 'syntaxy-theme-hook' ).href = './dist/css/syntaxy.'+ theme +'.min.css';
-        Cookies.set( '_theme', theme );
+        if( theme && typeof theme === 'string' )
+        {
+            document.getElementById( 'syntaxy-theme-hook' ).href = './dist/css/syntaxy.'+ theme +'.min.css';
+            Cookies.set( '_theme', theme );
+        }
     };
 
     // get syntax data from file over AJAX
@@ -141,6 +143,40 @@ $(function()
         });
     };
 
+    // get release info from Github
+    function getReleaseInfo()
+    {
+        var target  = $( '#repo-release-wrap' ),
+            request = $.ajax({
+
+            method: "GET",
+            url: "https://api.github.com/repos/rainner/syntaxy-js/releases",
+            dataType: "json",
+            async: true,
+            processData: false,
+            crossDomain: false,
+            cache: true,
+
+            success: function( data, textStatus, jqXHR )
+            {
+                if( data && Array.isArray( data ) )
+                {
+                    var release = data.shift();
+                    target.html( '' +
+                        'Release: &nbsp; <a target="_blank" href="' + String( release.html_url || '#' ) + '">'+ String( release.name || 'No release info' )  +'</a> <br /> ' +
+                        'Version: &nbsp; ' + String( release.tag_name || 'v0.0.0' ) + ' <br /> ' +
+                        ''
+                    );
+                }
+            },
+            error: function( jqXHR, textStatus, errorThrown )
+            {
+                console.log( String( errorThrown || textStatus || 'Ajax request failed.' ) );
+                target.html( 'There was a problem loading release details from Github. Check the console for more info.' );
+            },
+        });
+    }
+
     // handle syntax change menu click
     $( 'a.examples' ).on( 'click', function( e )
     {
@@ -184,6 +220,7 @@ $(function()
     fetchSyntaxCode( c_syntax, c_type );
     fetchTableData( 'options-tb', 'options' );
     fetchTableData( 'filters-tb', 'filters' );
+    getReleaseInfo();
     setupBootstrap();
 
     // init other syntaxy containers
