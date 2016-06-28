@@ -364,7 +364,7 @@
         {
             val = String( val || '' );
             def = String( def || '' );
-            return "" + ( val || def );
+            return ( val || def );
         },
 
         /**
@@ -377,7 +377,7 @@
         {
             val = ( /^(\-|\+){0,1}[0-9\.]+$/.test( val ) ) ? val : 0;
             def = ( /^(\-|\+){0,1}[0-9\.]+$/.test( def ) ) ? def : 0;
-            return 0 + ( val || def );
+            return ( val || def );
         },
 
         /**
