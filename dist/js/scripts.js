@@ -8,6 +8,13 @@ $(function()
         c_syntax = Cookies.get( '_syntax' ),
         c_type   = Cookies.get( '_type' );
 
+    // for lazy loading options
+    var doc     = document,
+        elm     = doc.documentElement,
+        bod     = doc.body,
+        vPos    = 3000,
+        vLoaded = false;
+
     // setup bootstrap related stuff
     function setupBootstrap()
     {
@@ -218,11 +225,24 @@ $(function()
     // load last syntax type, or default
     changeThemeFile( c_theme );
     fetchSyntaxCode( c_syntax, c_type );
-    fetchTableData( 'options-tb', 'options' );
-    fetchTableData( 'filters-tb', 'filters' );
-    getReleaseInfo();
+    $( '.syntaxy' ).syntaxy();
     setupBootstrap();
 
-    // init other syntaxy containers
-    $( '.syntaxy' ).syntaxy();
+    // delayed fetch
+    window.addEventListener( 'scroll', function( e )
+    {
+        if( vLoaded !== true )
+        {
+            var vScroll = Math.max( 0, elm.scrollTop, bod.scrollTop );
+
+            if( vScroll >= vPos )
+            {
+                vLoaded = true;
+                fetchTableData( 'options-tb', 'options' );
+                fetchTableData( 'filters-tb', 'filters' );
+                getReleaseInfo();
+            }
+        }
+    });
+
 });
