@@ -509,10 +509,10 @@
                     this.target.innerHTML = '' +
                     '<div class="'+ c('wrap') +'">' +
                         '<div class="'+ c('header') +' '+ c('clear') +'">' +
-                            '<div class="'+ c('left') +'">'+ this.options.codeTitle +'</div>' +
-                            '<div class="'+ c('right') +'">' +
+                            '<div class="'+ c('left') +' '+ c('text') +'">'+ this.options.codeTitle +'</div>' +
+                            '<div class="'+ c('right') +' '+ c('text') +'">' +
                                 '<button class="'+ c('error-btn') +' '+ c('important') +'" type="button" title="Process error">'+ errorText +'</button> ' +
-                                '<button class="'+ c('toggle-btn') +'" type="button" title="Toggle line numbers">☀</button> ' +
+                                '<button class="'+ c('toggle-btn') +' '+ c('text') +'" type="button" title="Toggle line numbers">☀</button> ' +
                                 '<span>' + totalLines + ' '+ ( totalLines === 1 ? 'line' : 'lines' ) +'</span>' +
                             '</div>' +
                         '</div>' +
@@ -618,7 +618,7 @@
                         clss = ( /^(import|export|include|require|use|using|from|define|ifndef)/.test( word ) ) ? 'import' : clss;
                         clss = ( /^(instanceof|typeof|typedef|and|xor|or|is|in|as)$/.test( word ) ) ? 'operator' : clss;
                         clss = ( /^(window|document|screen|module|global|arguments|parent|self|this)$/.test( word ) ) ? 'class' : clss;
-                        code = code.replace( new RegExp( "(^|[^\\.|\\>|\\-|\\/])([\\$|\\#]?\\b("+word+")\\b)(?![\\=|\\(|\\:])", 'g' ), function( m, m1, m2 ){
+                        code = code.replace( new RegExp( "(^|[^\\.|\\>|\\-|\\$|\\#|\\/])\\b("+word+")\\b", 'g' ), function( m, m1, m2 ){
                             return m1 + this.wrapClass( clss, m2, true );
                         }.bind( this ) );
                     }.bind( this ) );
@@ -674,15 +674,15 @@
                         return this.wrapClass( 'string', str, true, true ); // multiline blocks
                     }.bind( this ) );
 
-                    code = code.replace( /((?:\'[^\'\n\\]*(?:\\.[^\'\n\\]*)*\'))/g, function( m, str ){
+                    code = code.replace( /((?:\'[^\'\n]*(?:\\.[^\'\n]*)*\'))/g, function( m, str ){
                         return this.wrapClass( 'string', str, true ); // 'single quotes'
                     }.bind( this ) );
 
-                    code = code.replace( /((?:\"[^\"\n\\]*(?:\\.[^\"\n\\]*)*\"))/g, function( m, str ){
+                    code = code.replace( /((?:\"[^\"\n]*(?:\\.[^\"\n]*)*\"))/g, function( m, str ){
                         return this.wrapClass( 'string', str, true ); // "double quotes"
                     }.bind( this ) );
 
-                    code = code.replace( /((?:\`[^\`\n\\]*(?:\\.[^\`\n\\]*)*\`))/g, function( m, str ){
+                    code = code.replace( /((?:\`[^\`\n]*(?:\\.[^\`\n]*)*\`))/g, function( m, str ){
                         return this.wrapClass( 'string', str, true ); // `backticks`
                     }.bind( this ) );
 
