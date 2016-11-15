@@ -152,8 +152,8 @@
             .replace( /&amp;/g, '&' )
             .replace( /&lt;/g, '<' )
             .replace( /&gt;/g, '>' )
-            .replace( /&nbsp;|\u00a0/gi, '\s' )
-            .replace( /\t/g, "\s\s\s\s" )
+            .replace( /&nbsp;|\u00a0/gi, ' ' )
+            .replace( /\t/g, '    ' )
             .replace( /[\r]+/g, '' )
             .replace( /^[\n]+/, '' )
             .replace( /[\s\t\n\uFEFF\xA0]+$/, '' );
