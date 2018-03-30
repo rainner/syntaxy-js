@@ -3,7 +3,9 @@
 [repo]: https://github.com/rainner/syntaxy-js
 [demo]: https://rainner.github.io/syntaxy-js
 
-# Syntaxy.js
+# Syntaxy JS
+
+![File-Browser](https://raw.githubusercontent.com/rainner/syntaxy-js/master/thumb.jpg)
 
 Syntaxy is a small and flexible syntax highlighter for the web. It uses one common theme file for all syntax languages to make it easier to customize the appearance to fit your theme. It has no dependencies out of the box, but can be used as a jQuery plugin, if you already have it loaded on your site.
 
